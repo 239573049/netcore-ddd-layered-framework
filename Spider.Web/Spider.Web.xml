@@ -24,6 +24,16 @@
             <param name="time">封至时间</param>
             <returns></returns>
         </member>
+        <member name="M:Spider.Web.Controllers.AccountController.GetAccountList(System.String,System.Nullable{Spider.Code.DbEnum.StatusEnum},System.Int32,System.Int32)">
+            <summary>
+            获取用户列表
+            </summary>
+            <param name="name"></param>
+            <param name="status"></param>
+            <param name="pageNo"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
         <member name="T:Spider.Web.Controllers.LoginController">
             <summary>
             登录接口
@@ -35,16 +45,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Spider.Web.Controllers.LoginController.GetAccountList(System.String,System.Nullable{Spider.Code.DbEnum.StatusEnum},System.Int32,System.Int32)">
-            <summary>
-            获取用户列表
-            </summary>
-            <param name="name"></param>
-            <param name="status"></param>
-            <param name="pageNo"></param>
-            <param name="pageSize"></param>
-            <returns></returns>
-        </member>
         <member name="T:Spider.Web.Controllers.SystemController">
             <summary>
             系统信息接口
@@ -54,6 +54,37 @@
             <summary>
             获取运行系统
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spider.Web.Controllers.SystemController.GetData">
+            <summary>
+            获取信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spider.Web.Controllers.SystemController.GetInternetSpeed">
+            <summary>
+            获取网络速度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spider.Web.Controllers.UtilController">
+            <summary>
+            工具
+            </summary>
+        </member>
+        <member name="M:Spider.Web.Controllers.UtilController.MD5Decrypt(System.String)">
+            <summary>
+            MD5解密
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spider.Web.Controllers.UtilController.MD5Encrypt(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="data"></param>
             <returns></returns>
         </member>
         <member name="T:Spider.Web.Startup">

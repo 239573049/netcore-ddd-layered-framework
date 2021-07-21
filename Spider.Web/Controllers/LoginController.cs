@@ -23,13 +23,16 @@ namespace Spider.Web.Controllers
     {
         private readonly IMapper mapper;
         private readonly IAccountService accountService;
+        private readonly IRedisUtil redisUtil;
         
         public LoginController(
             IMapper mapper,
+            IRedisUtil redisUtil,
             IAccountService accountService
             )
         {
             this.mapper = mapper;
+            this.redisUtil = redisUtil;
             this.accountService = accountService;
         }
         /// <summary>
@@ -47,20 +50,10 @@ namespace Spider.Web.Controllers
                 case StatusEnum.Freeze:
                     return new ModelStateResult($"账号已冻结至{(DateTime)data.Freezetime:yyyy-MM-dd HH:mm:ss}");
             }
-            return new OkObjectResult("成功");
-        }
-        /// <summary>
-        /// 获取用户列表
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="status"></param>
-        /// <param name="pageNo"></param>
-        /// <param name="pageSize"></param>
-        /// <returns></returns>
-        [HttpGet]
-        public async Task<Tuple<List<AccountDto>, int>> GetAccountList(string name, StatusEnum? status, int pageNo = 1, int pageSize = 20)
-        {
-            return await accountService.GetAccountList(name, status, pageNo, pageSize);
+            var token = StringUtil.GetStrings(200);
+            await redisUtil.SetAsync(token,data,DateTime.Now.AddMinutes(30));
+            HttpContext.Response.Cookies.Append("userData",$"{data}");
+            return new OkObjectResult(new {token,user=data});
         }
 
     }

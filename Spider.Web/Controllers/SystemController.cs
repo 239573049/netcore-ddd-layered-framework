@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Spider.Uitl.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,6 @@ namespace Spider.Web.Controllers
     [ApiController]
     public class SystemController : ControllerBase
     {
-        
-        public SystemController(
-            )
-        {
-
-        }
         /// <summary>
         /// 获取运行系统
         /// </summary>
@@ -27,8 +22,22 @@ namespace Spider.Web.Controllers
         [HttpGet]
         public IActionResult OSVersion()
         {
-            var data =Environment.WorkingSet;
-            return new OkObjectResult(Environment.OSVersion.Platform.ToString());
+            var sys =new SystemUtil();
+            return new OkObjectResult(new { CpuState= sys.GetCpuState(), Mem = sys.GetMem(), PidInfo = sys.GetPidInfo(), Tasks = sys.GetTasks() });
         }
+        /// <summary>
+        /// 获取信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetData() =>
+            new OkObjectResult(SystemUtil.GetSystemData());
+        /// <summary>
+        /// 获取网络速度
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetInternetSpeed() =>
+            new OkObjectResult(SystemUtil.InternetSpeed());
     }
 }

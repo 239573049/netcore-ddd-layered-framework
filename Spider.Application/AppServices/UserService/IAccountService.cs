@@ -55,6 +55,7 @@ namespace Spider.Application.AppServices.UserService
 
         public async Task<bool> FreezeAccount(List<Guid> ids, DateTime time)
         {
+            if (time < DateTime.Now) throw new BusinessLogicException("封禁时间不能小于当前时间");
             var data =await currentRepository.FindAll(a=>ids.Contains(a.Id)).ToListAsync();
             data.ForEach(a =>{ a.Status = StatusEnum.Freeze; a.Freezetime = time; }) ;
             currentRepository.UpdateMany(data);

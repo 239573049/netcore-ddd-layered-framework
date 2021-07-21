@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Spider.Application.AppServices.UserService;
+using Spider.Code.DbEnum;
 using Spider.Code.Entities.User;
 using System;
 using System.Collections.Generic;
@@ -46,5 +47,19 @@ namespace Spider.Web.Controllers
         [HttpPut]
         public async Task<bool> FreezeAccount(List<Guid> ids, DateTime time) =>
             await accountService.FreezeAccount(ids, time);
+
+        /// <summary>
+        /// 获取用户列表
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="pageNo"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<Tuple<List<AccountDto>, int>> GetAccountList(string name, StatusEnum? status, int pageNo = 1, int pageSize = 20)
+        {
+            return await accountService.GetAccountList(name, status, pageNo, pageSize);
+        }
     }
 }

@@ -32,10 +32,9 @@ namespace Spider.EntityFrameworkCore.Core
                 _dbContext.SaveChanges();
                 _dbContext.Database.CommitTransaction();
             }
-            catch (Exception ex)
-            {
+            catch (Exception) {
                 _dbContext.Database.RollbackTransaction();
-                throw ex;
+                throw;
             }
         }
         
