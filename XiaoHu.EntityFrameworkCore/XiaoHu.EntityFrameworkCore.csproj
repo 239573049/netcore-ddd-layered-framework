@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Spider.Code\Spider.Code.csproj" />
+    <ProjectReference Include="..\XiaoHu.Code\XiaoHu.Code.csproj" />
   </ItemGroup>
 
 </Project>

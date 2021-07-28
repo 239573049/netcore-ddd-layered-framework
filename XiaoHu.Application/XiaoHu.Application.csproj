@@ -10,9 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Spider.Code\Spider.Code.csproj" />
-    <ProjectReference Include="..\Spider.EntityFrameworkCore\Spider.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\Spider.Uitl\Spider.Uitl.csproj" />
+    <ProjectReference Include="..\XiaoHu.Code\XiaoHu.Code.csproj" />
+    <ProjectReference Include="..\XiaoHu.EntityFrameworkCore\XiaoHu.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\XiaoHu.Uitl\XiaoHu.Uitl.csproj" />
   </ItemGroup>
 
 </Project>

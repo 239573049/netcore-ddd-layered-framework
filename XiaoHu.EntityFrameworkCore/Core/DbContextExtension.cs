@@ -6,7 +6,7 @@ using System.Data.Common;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.EntityFrameworkCore.Core
+namespace XiaoHu.EntityFrameworkCore.Core
 {
     public static class DbContextExtension
     {

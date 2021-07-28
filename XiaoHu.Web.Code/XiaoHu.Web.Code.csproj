@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Spider.Application\Spider.Application.csproj" />
-    <ProjectReference Include="..\Spider.Uitl\Spider.Uitl.csproj" />
+    <ProjectReference Include="..\XiaoHu.Application\XiaoHu.Application.csproj" />
+    <ProjectReference Include="..\XiaoHu.Uitl\XiaoHu.Uitl.csproj" />
   </ItemGroup>
 
 </Project>
