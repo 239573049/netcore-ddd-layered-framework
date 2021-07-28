@@ -1,4 +1,4 @@
-﻿using Spider.Core.Base;
+﻿using XiaoHu.Core.Base;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Spider.EntityFrameworkCore.Core
+namespace XiaoHu.EntityFrameworkCore.Core
 {
     public abstract class EfRepository<TDbContext, TEntity, TKey> : IRepository<TDbContext, TEntity, TKey>
         where TEntity : Entity<TKey>
@@ -69,7 +69,7 @@ namespace Spider.EntityFrameworkCore.Core
             foreach (var entity in entityList)
             {
                 Context.Entry(entity).State = EntityState.Modified;
-                foreach (var property in type.GetProperties().Where(a => a.PropertyType.FullName != null && !a.PropertyType.FullName.Contains("Spider.Core.Entities")))
+                foreach (var property in type.GetProperties().Where(a => a.PropertyType.FullName != null && !a.PropertyType.FullName.Contains("XiaoHu.Core.Entities")))
                 {
                     var fieldName = property.Name;
                     Context.Entry(entity).Property(fieldName).IsModified = fields.Contains(fieldName);

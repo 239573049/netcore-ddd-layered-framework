@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.Web.Code.AutoMapper
+namespace XiaoHu.Web.Code.AutoMapper
 {
     public class AutoMapperProfile:Profile
     {

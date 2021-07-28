@@ -1,11 +1,11 @@
-﻿using Spider.Web.Code.Model.System;
+﻿using XiaoHu.Web.Code.Model.System;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.Web.Code.Gadget
+namespace XiaoHu.Web.Code.Gadget
 {
     public class SystemUtil
     {

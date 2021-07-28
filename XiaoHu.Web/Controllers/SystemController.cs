@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Spider.Uitl.Util;
+using XiaoHu.Uitl.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Spider.Web.Controllers
+namespace XiaoHu.Web.Controllers
 {
     /// <summary>
     /// 系统信息接口

@@ -1,11 +1,11 @@
-﻿using Spider.Code.Entities.User;
+﻿using XiaoHu.Code.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.EntityFrameworkCore.Repository.UserRepository
+namespace XiaoHu.EntityFrameworkCore.Repository.UserRepository
 {
 
     public interface IAccountRepository : IMasterDbRepositoryBase<Account>

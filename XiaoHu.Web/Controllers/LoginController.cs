@@ -1,18 +1,18 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Spider.Application.AppServices.UserService;
-using Spider.Code.DbEnum;
-using Spider.Code.Entities.User;
-using Spider.Uitl.Util;
-using Spider.Web.Code;
+using XiaoHu.Application.AppServices.UserService;
+using XiaoHu.Code.DbEnum;
+using XiaoHu.Code.Entities.User;
+using XiaoHu.Uitl.Util;
+using XiaoHu.Web.Code;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using static Cx.NetCoreUtils.Filters.GlobalModelStateValidationFilter;
 
-namespace Spider.Web.Controllers
+namespace XiaoHu.Web.Controllers
 {
     /// <summary>
     /// 登录接口

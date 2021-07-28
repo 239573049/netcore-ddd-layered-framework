@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.Web.Code.Model.System
+namespace XiaoHu.Web.Code.Model.System
 {
     public class SystemDataVM
     {

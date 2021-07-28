@@ -13,9 +13,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Spider.EntityFrameworkCore;
-using Spider.EntityFrameworkCore.Core;
-using Spider.EntityFrameworkCore.Repository;
+using XiaoHu.EntityFrameworkCore;
+using XiaoHu.EntityFrameworkCore.Core;
+using XiaoHu.EntityFrameworkCore.Repository;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
 using System.IO;
@@ -23,7 +23,7 @@ using System.Linq;
 using System.Reflection;
 using static Cx.NetCoreUtils.Swagger.SwaggerSetup;
 
-namespace Spider.Web
+namespace XiaoHu.Web
 {
     /// <summary>
     /// ÅäÖÃÎÄ¼þ
@@ -63,8 +63,8 @@ namespace Spider.Web
             services.AddAuthenticationSetup();
             services.AddCorsSetup();
             services.AddMemoryCache();
-            services.AddSwaggerSetup("1.0.0.1", "Spider API", "Spider Web API", new Contact { Email = "239573049@qq.com", Name = "xiaohu", Url = new System.Uri("https://github.com/239573049") });
-            services.AddAutoMapperSetup("Spider.Application", "Spider.Web.Code");
+            services.AddSwaggerSetup("1.0.0.1", "XiaoHu API", "XiaoHu Web API", new Contact { Email = "239573049@qq.com", Name = "xiaohu", Url = new System.Uri("https://github.com/239573049") });
+            services.AddAutoMapperSetup("XiaoHu.Application", "XiaoHu.Web.Code");
             services.AddHttpContext();            
             services.AddControllers(o =>
             {
@@ -99,7 +99,7 @@ namespace Spider.Web
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/1.0.0.1/swagger.json", "Spider API V1");
+                c.SwaggerEndpoint("/swagger/1.0.0.1/swagger.json", "XiaoHu API V1");
                 c.DocExpansion(DocExpansion.None);
             });
             app.UseEndpoints(endpoints =>
@@ -115,8 +115,8 @@ namespace Spider.Web
         {
             var basePath = ApplicationEnvironment.ApplicationBasePath;
 
-            var servicesDllFile = Path.Combine(basePath, "Spider.Application.dll");
-            var repositoryDllFile = Path.Combine(basePath, "Spider.EntityFrameworkCore.dll");
+            var servicesDllFile = Path.Combine(basePath, "XiaoHu.Application.dll");
+            var repositoryDllFile = Path.Combine(basePath, "XiaoHu.EntityFrameworkCore.dll");
 
             var assemblysServices = Assembly.LoadFrom(servicesDllFile);
             containerBuilder.RegisterAssemblyTypes(assemblysServices)

@@ -1,15 +1,15 @@
 ﻿
-using Spider.Core.Base;
-using Spider.EntityFrameworkCore;
-using Spider.EntityFrameworkCore.Core;
-using Spider.EntityFrameworkCore.Repository;
+using XiaoHu.Core.Base;
+using XiaoHu.EntityFrameworkCore;
+using XiaoHu.EntityFrameworkCore.Core;
+using XiaoHu.EntityFrameworkCore.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Spider.Application
+namespace XiaoHu.Application
 {
     public interface IBaseService<TEntity> where TEntity : Entity, new()
     {

@@ -1,7 +1,7 @@
 ﻿using Cx.NetCoreUtils.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Spider.Web.Controllers
+namespace XiaoHu.Web.Controllers
 {
     /// <summary>
     /// 工具

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Spider.Core.Base;
+using XiaoHu.Core.Base;
 using System.Linq.Expressions;
 using System.Reflection;
-namespace Spider.EntityFrameworkCore
+namespace XiaoHu.EntityFrameworkCore
 {
     public class MasterDbContext : DbContext
     {

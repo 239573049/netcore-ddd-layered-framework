@@ -10,7 +10,7 @@ using System.Linq;
 using System.Security.Authentication;
 using System.Threading.Tasks;
 
-namespace Spider.Web
+namespace XiaoHu.Web
 {
     public class Program
     {

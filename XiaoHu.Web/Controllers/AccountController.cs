@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Spider.Application.AppServices.UserService;
-using Spider.Code.DbEnum;
-using Spider.Code.Entities.User;
+using XiaoHu.Application.AppServices.UserService;
+using XiaoHu.Code.DbEnum;
+using XiaoHu.Code.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Spider.Web.Controllers
+namespace XiaoHu.Web.Controllers
 {
     /// <summary>
     /// 账号接口

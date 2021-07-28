@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Spider.Code.Entities.User;
+using XiaoHu.Code.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.EntityFrameworkCore.Mappings.UserConfiguration
+namespace XiaoHu.EntityFrameworkCore.Mappings.UserConfiguration
 {
     public class IAccounConfiguration : EntityConfiguration<Account>
     {

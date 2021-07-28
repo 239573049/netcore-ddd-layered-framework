@@ -1,8 +1,8 @@
-﻿using Spider.Code.DbEnum;
-using Spider.Core.Base;
+﻿using XiaoHu.Code.DbEnum;
+using XiaoHu.Core.Base;
 using System;
 
-namespace Spider.Code.Entities.User
+namespace XiaoHu.Code.Entities.User
 {
     /// <summary>
     /// 账号

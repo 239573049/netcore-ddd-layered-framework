@@ -1,12 +1,12 @@
-﻿using Spider.Code.DbEnum;
-using Spider.Core.Base;
+﻿using XiaoHu.Code.DbEnum;
+using XiaoHu.Core.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.Code.Entities.User
+namespace XiaoHu.Code.Entities.User
 {
     /// <summary>
     /// 账号

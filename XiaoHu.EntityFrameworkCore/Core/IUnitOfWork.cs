@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
-namespace Spider.EntityFrameworkCore.Core
+namespace XiaoHu.EntityFrameworkCore.Core
 {
     public interface IUnitOfWork<TDbContext> where TDbContext : DbContext
     {

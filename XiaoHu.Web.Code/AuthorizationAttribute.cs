@@ -1,10 +1,10 @@
 ﻿
 using Cx.NetCoreUtils.Exceptions;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Spider.Code.Entities.User;
-using Spider.Uitl.Util;
+using XiaoHu.Code.Entities.User;
+using XiaoHu.Uitl.Util;
 
-namespace Spider.Web.Code
+namespace XiaoHu.Web.Code
 {
     public class AuthorizationAttribute : ActionFilterAttribute
     {

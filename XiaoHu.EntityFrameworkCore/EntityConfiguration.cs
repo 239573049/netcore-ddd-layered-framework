@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using Spider.Core.Base;
+using XiaoHu.Core.Base;
 
-namespace Spider.EntityFrameworkCore
+namespace XiaoHu.EntityFrameworkCore
 {
     public abstract class EntityConfiguration<T> : IEntityTypeConfiguration<T> where T : Entity
     {

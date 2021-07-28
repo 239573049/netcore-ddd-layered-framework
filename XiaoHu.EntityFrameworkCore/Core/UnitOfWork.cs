@@ -1,12 +1,12 @@
 ﻿using Cx.NetCoreUtils.HttpContext;
-using Spider.Core.Base;
+using XiaoHu.Core.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Spider.EntityFrameworkCore.Core
+namespace XiaoHu.EntityFrameworkCore.Core
 {
     public class UnitOfWork<TDbContext> : IUnitOfWork<TDbContext> where TDbContext : DbContext
     {

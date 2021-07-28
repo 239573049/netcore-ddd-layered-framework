@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Spider.Core.Base
+namespace XiaoHu.Core.Base
 {
     public abstract class Entity : Entity<Guid> { }
 

@@ -1,8 +1,8 @@
-﻿using Spider.Core.Base;
-using Spider.EntityFrameworkCore.Core;
+﻿using XiaoHu.Core.Base;
+using XiaoHu.EntityFrameworkCore.Core;
 using System;
 
-namespace Spider.EntityFrameworkCore.Repository
+namespace XiaoHu.EntityFrameworkCore.Repository
 {
     public interface IMasterDbRepositoryBase<TEntity> : IRepository<MasterDbContext, TEntity, Guid> where TEntity : Entity<Guid>
     {

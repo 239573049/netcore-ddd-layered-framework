@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.Uitl.Util
+namespace XiaoHu.Uitl.Util
 {
     public interface IRedisUtil
     {

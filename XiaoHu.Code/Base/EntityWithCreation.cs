@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Spider.Core.Base
+namespace XiaoHu.Core.Base
 {
     public class EntityWithCreation : IHaveCreation
     {

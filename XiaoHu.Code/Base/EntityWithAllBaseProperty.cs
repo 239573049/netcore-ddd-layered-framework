@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Spider.Core.Base
+namespace XiaoHu.Core.Base
 {
     public class EntityWithAllBaseProperty : Entity, IHaveCreation, IHaveModification, IHaveDeletion
     {

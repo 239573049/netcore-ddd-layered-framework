@@ -1,4 +1,4 @@
-﻿using Spider.Core.Base;
+﻿using XiaoHu.Core.Base;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Spider.EntityFrameworkCore.Core
+namespace XiaoHu.EntityFrameworkCore.Core
 {
     public interface IRepository<TDbContext, TEntity, TKey> where TEntity : Entity<TKey> where TDbContext : DbContext
     {

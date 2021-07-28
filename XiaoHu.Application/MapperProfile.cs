@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Spider.Code.Entities.User;
+using XiaoHu.Code.Entities.User;
 using System;
 using System.Net.Mail;
 

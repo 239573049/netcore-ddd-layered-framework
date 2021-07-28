@@ -1,18 +1,18 @@
 ﻿using AutoMapper;
 using Cx.NetCoreUtils.Exceptions;
 using Microsoft.EntityFrameworkCore;
-using Spider.Code.DbEnum;
-using Spider.Code.Entities.User;
-using Spider.EntityFrameworkCore;
-using Spider.EntityFrameworkCore.Core;
-using Spider.EntityFrameworkCore.Repository.UserRepository;
+using XiaoHu.Code.DbEnum;
+using XiaoHu.Code.Entities.User;
+using XiaoHu.EntityFrameworkCore;
+using XiaoHu.EntityFrameworkCore.Core;
+using XiaoHu.EntityFrameworkCore.Repository.UserRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider.Application.AppServices.UserService
+namespace XiaoHu.Application.AppServices.UserService
 {
     public interface IAccountService
     {

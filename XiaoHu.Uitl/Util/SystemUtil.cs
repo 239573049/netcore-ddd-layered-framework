@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Spider.Uitl.Util
+namespace XiaoHu.Uitl.Util
 {
     public class SystemUtil
     {
