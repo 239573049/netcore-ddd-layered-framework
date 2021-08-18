@@ -39,18 +39,14 @@ namespace XiaoHu.Uitl.Util
         /// 转base64
         /// </summary>
         /// <returns></returns>
-        public static string Transition(byte[] data)
-        {
-            return Base64.ToBase64String(data);
-        }
+        public static string Transition(byte[] data)=>
+            Base64.ToBase64String(data);
         /// <summary>
         /// base64解码
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public static byte[] Decode(byte[] data)
-        {
-            return Base64.Decode(data);
-        }
+        public static byte[] Decode(byte[] data)=>
+            Base64.Decode(data);
     }
 }

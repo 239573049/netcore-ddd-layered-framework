@@ -5,6 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Chat.Uitl.Util;
+using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.X86;
+using XiaoHu.Web.Code.Model.System;
 
 namespace XiaoHu.Web.Controllers
 {
@@ -16,28 +20,38 @@ namespace XiaoHu.Web.Controllers
     public class SystemController : ControllerBase
     {
         /// <summary>
-        /// 获取运行系统
+        /// 获取系统信息
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         public IActionResult OSVersion()
         {
-            var sys =new SystemUtil();
-            return new OkObjectResult(new { CpuState= sys.GetCpuState(), Mem = sys.GetMem(), PidInfo = sys.GetPidInfo(), Tasks = sys.GetTasks() });
+            var obj = new SystemDataVM();
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) {
+                var use = LinuxData.ReadMemInfo();
+                obj= new SystemDataVM
+                {   
+                    Available=use.Available,
+                    Total=use.Total,
+                    Usage= use.Usage,
+                    Cpu = LinuxData.QUERY_CPULOAD(false),
+                    SystemOs = "Linux"
+                }; 
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+                obj = new SystemDataVM
+                {
+
+                    Available = WinData.GetRAM(),
+                    SystemOs = "Windows",
+                    SystemUpTime = WinData.GetSystemUpTime(),
+                    Total = WinData.GetMemory(),
+                    Cpu = WinData.GetCpuUsage(),
+                };
+                obj.Usage = Convert.ToInt32((obj.Total - obj.Available) / obj.Total * 100);
+            }
+            return new OkObjectResult(obj);
         }
-        /// <summary>
-        /// 获取信息
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public IActionResult GetData() =>
-            new OkObjectResult(SystemUtil.GetSystemData());
-        /// <summary>
-        /// 获取网络速度
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public IActionResult GetInternetSpeed() =>
-            new OkObjectResult(SystemUtil.InternetSpeed());
+       
     }
 }

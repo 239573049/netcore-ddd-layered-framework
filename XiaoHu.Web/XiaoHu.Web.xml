@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XiaoHu.Web</name>
+    </assembly>
+    <members>
+        <member name="T:XiaoHu.Web.Controllers.AccountController">
+            <summary>
+            账号接口
+            </summary>
+        </member>
+        <member name="M:XiaoHu.Web.Controllers.AccountController.CreateAccount(XiaoHu.Code.Entities.User.AccountDto)">
+            <summary>
+            新增账号
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XiaoHu.Web.Controllers.AccountController.FreezeAccount(System.Collections.Generic.List{System.Guid},System.DateTime)">
+            <summary>
+            封禁账号
+            </summary>
+            <param name="ids"></param>
+            <param name="time">封至时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:XiaoHu.Web.Controllers.AccountController.GetAccountList(System.String,System.Nullable{XiaoHu.Code.DbEnum.StatusEnum},System.Int32,System.Int32)">
+            <summary>
+            获取用户列表
+            </summary>
+            <param name="name"></param>
+            <param name="status"></param>
+            <param name="pageNo"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XiaoHu.Web.Controllers.LoginController">
+            <summary>
+            登录接口
+            </summary>
+        </member>
+        <member name="M:XiaoHu.Web.Controllers.LoginController.Register(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XiaoHu.Web.Controllers.SystemController">
+            <summary>
+            系统信息接口
+            </summary>
+        </member>
+        <member name="M:XiaoHu.Web.Controllers.SystemController.OSVersion">
+            <summary>
+            获取系统信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XiaoHu.Web.Controllers.UtilController">
+            <summary>
+            工具
+            </summary>
+        </member>
+        <member name="M:XiaoHu.Web.Controllers.UtilController.MD5Decrypt(System.String)">
+            <summary>
+            MD5解密
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XiaoHu.Web.Controllers.UtilController.MD5Encrypt(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XiaoHu.Web.Startup">
+            <summary>
+            配置文件
+            </summary>
+        </member>
+        <member name="M:XiaoHu.Web.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            人口
+            </summary>
+            <param name="configuration"></param>
+            <param name="env"></param>
+        </member>
+        <member name="P:XiaoHu.Web.Startup.Configuration">
+            <summary>
+            appsettings文件
+            </summary>
+        </member>
+        <member name="P:XiaoHu.Web.Startup.Env">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XiaoHu.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:XiaoHu.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            管道
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="log"></param>
+        </member>
+        <member name="M:XiaoHu.Web.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="containerBuilder"></param>
+        </member>
+    </members>
+</doc>
