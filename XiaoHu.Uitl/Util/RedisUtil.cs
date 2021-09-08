@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace XiaoHu.Uitl.Util
 {
-    public class RedisUtil 
+    public class RedisUtil : IRedisUtil
     {
         /// <summary>
         /// 获取
@@ -23,6 +23,7 @@ namespace XiaoHu.Uitl.Util
         {
             return RedisHelper.Get<T>(key);
         }
+
         /// <summary>
         /// 设置
         /// </summary>
@@ -32,8 +33,9 @@ namespace XiaoHu.Uitl.Util
         public void Set(string key, object t, DateTime expiresSec)
         {
             RedisHelper.Set(key, t);
-            SetDate(key,expiresSec);
+            SetDate(key, expiresSec);
         }
+
         /// <summary>
         /// 异步获取
         /// </summary>
@@ -43,6 +45,7 @@ namespace XiaoHu.Uitl.Util
         {
             return await RedisHelper.GetAsync(key);
         }
+
         /// <summary>
         /// 获取值泛型
         /// </summary>
@@ -53,6 +56,7 @@ namespace XiaoHu.Uitl.Util
         {
             return await RedisHelper.GetAsync<T>(key);
         }
+
         /// <summary>
         /// 修改或新增
         /// </summary>
@@ -63,18 +67,20 @@ namespace XiaoHu.Uitl.Util
         public async Task SetAsync(string key, object t, DateTime expiresSec)
         {
             await RedisHelper.SetAsync(key, t);
-            await SetDateAsync(key,expiresSec);
+            await SetDateAsync(key, expiresSec);
         }
+
         /// <summary>
         /// 设置超时时间
         /// </summary>
         /// <param name="key"></param>
         /// <param name="date"></param>
         /// <returns></returns>
-        public bool SetDate(string key,DateTime date)
+        public bool SetDate(string key, DateTime date)
         {
-            return RedisHelper.PExpireAt(key,date);
+            return RedisHelper.PExpireAt(key, date);
         }
+
         /// <summary>
         /// 设置超时时间异步
         /// </summary>

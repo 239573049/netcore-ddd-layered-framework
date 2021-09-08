@@ -93,15 +93,15 @@
             </summary>
         </member>
         <member name="P:XiaoHu.Web.Startup.Env">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:XiaoHu.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="services"></param>
+             </summary>
+             <param name="services"></param>
         </member>
         <member name="M:XiaoHu.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
             <summary>
@@ -113,7 +113,7 @@
         </member>
         <member name="M:XiaoHu.Web.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
             <summary>
-            
+            依赖注入
             </summary>
             <param name="containerBuilder"></param>
         </member>

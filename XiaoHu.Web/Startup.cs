@@ -22,6 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using static Cx.NetCoreUtils.Swagger.SwaggerSetup;
+using XiaoHu.Uitl.Util;
 
 namespace XiaoHu.Web
 {
@@ -40,43 +41,67 @@ namespace XiaoHu.Web
             Configuration = configuration;
             Env = env;
         }
+
         /// <summary>
         /// appsettings文件
         /// </summary>
         public IConfiguration Configuration { get; }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IWebHostEnvironment Env { get; }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             var csredis = new CSRedisClient(Configuration["ConnectionString:Redis"]);
             RedisHelper.Initialization(csredis);
-            services.AddSingleton(new AppSettings(Env.ContentRootPath)); 
-            services.AddDbContext<MasterDbContext>(option => option.UseMySql(Configuration["ConnectionString:Default"].MD5Decrypt(), new MySqlServerVersion(new Version(5, 7, 29))));
-            services.AddTransient(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
-            services.AddTransient(typeof(IMasterDbRepositoryBase<,>), typeof(MasterDbRepositoryBase<,>));
-            services.AddAuthenticationSetup();
-            services.AddCorsSetup();
-            services.AddMemoryCache();
-            services.AddSwaggerSetup("1.0.0.1", "XiaoHu API", "XiaoHu Web API", new Contact { Email = "239573049@qq.com", Name = "xiaohu", Url = new System.Uri("https://github.com/239573049") });
-            services.AddAutoMapperSetup("XiaoHu.Application", "XiaoHu.Web.Code");
-            services.AddHttpContext();            
-            services.AddControllers(o =>
+            services.AddSingleton(new AppSettings(Env.ContentRootPath));
+            //根据配置文件选择数据库
+            if (Configuration["database"].ToLower() == "mysql") {
+                services
+                    .AddDbContext<MasterDbContext>(option => option.UseMySql(Configuration["ConnectionString:Default"].MD5Decrypt(),
+                    new MySqlServerVersion(new Version(5, 7, 29))));
+            }
+            else {
+                services
+                    .AddDbContext<MasterDbContext>(option => option.UseSqlServer(Configuration["ConnectionString:Default"].MD5Decrypt()));
+            }
+            services
+                .AddTransient(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
+            services.AddTransient(typeof(IRedisUtil),typeof(RedisUtil));
+            services
+                .AddTransient(typeof(IMasterDbRepositoryBase<,>), typeof(MasterDbRepositoryBase<,>));
+            services
+                .AddAuthenticationSetup();
+            services
+                .AddCorsSetup();
+            services
+                .AddMemoryCache();
+            services
+                .AddSwaggerSetup("1.0.0.1", "XiaoHu API", "XiaoHu Web API", new Contact { Email = "239573049@qq.com", Name = "xiaohu", Url = new System.Uri("https://github.com/239573049") });
+            services
+                .AddAutoMapperSetup("XiaoHu.Application", "XiaoHu.Web.Code");
+            services
+                .AddHttpContext();
+            services
+                .AddControllers(o =>
             {
                 o.Filters.Add(typeof(GlobalExceptionsFilter));
                 o.Filters.Add(typeof(GlobalResponseFilter));
                 o.Filters.Add<GlobalModelStateValidationFilter>();
-            }).AddNewtonsoftJson(options =>
+            })
+                .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 options.SerializerSettings.DateFormatString = Constants.DefaultFullDateFormat;
             });
         }
+
         /// <summary>
         /// 管道
         /// </summary>
@@ -107,8 +132,9 @@ namespace XiaoHu.Web
                 endpoints.MapControllers();
             });
         }
+
         /// <summary>
-        /// 
+        /// 依赖注入
         /// </summary>
         /// <param name="containerBuilder"></param>
         public void ConfigureContainer(ContainerBuilder containerBuilder)
